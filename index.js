@@ -3,40 +3,55 @@ var sleep = require('sleep').sleep;
 var msleep = require('sleep').msleep;
 var gpiop = gpio.promise;
 
-async function run(){
- 
-await gpiop.setup(7, gpio.DIR_OUT)
-await gpiop.setup(11, gpio.DIR_OUT)
+async function run() {
 
-while(true){
-					
-       			console.log("Turning on")
-			      await gpiop.write(7, true)
-			      msleep(100);
-					console.log("Turning off")
-			      await gpiop.write(7, false)
-			      msleep(100)
-			      console.log("Turning on")
-			      await gpiop.write(7, true)
-			      msleep(100);
-					console.log("Turning off")
-			      await gpiop.write(7, false)
-			      sleep(1)
-								      
-			      console.log("Turning on")
-			      await gpiop.write(11, true)
-			      msleep(100);
-					console.log("Turning off")
-			      await gpiop.write(11, false)
-			      msleep(100)
-			      console.log("Turning on")
-			      await gpiop.write(11, true)
-			      msleep(100);
-					console.log("Turning off")
-			      await gpiop.write(11, false)
-			      sleep(1)
-       }
+	//LED
+	await gpiop.setup(7, gpio.DIR_OUT)
+	await gpiop.setup(11, gpio.DIR_OUT)
+
+	//Motors 1
+	await gpiop.setup(40, gpio.DIR_OUT)
+	await gpiop.setup(29, gpio.DIR_OUT)
+	await gpiop.setup(33, gpio.DIR_OUT)
+	await gpiop.setup(32, gpio.DIR_OUT)
+
+	//Motors 2
+	await gpiop.setup(37, gpio.DIR_OUT)
+	await gpiop.setup(19, gpio.DIR_OUT)
+	await gpiop.setup(21, gpio.DIR_OUT)
+	await gpiop.setup(13, gpio.DIR_OUT)
+
+	while (true) {
+
+		console.log("Turning on")
+		await gpiop.write(7, true)
+		await gpiop.write(40, true)
+		await gpiop.write(37, true)
+		msleep(100);
+		console.log("Turning off")
+		await gpiop.write(7, false)
+		msleep(100)
+		console.log("Turning on")
+		await gpiop.write(7, true)
+		msleep(100);
+		console.log("Turning off")
+		await gpiop.write(7, false)
+		sleep(1)
+
+		console.log("Turning on")
+		await gpiop.write(11, true)
+		msleep(100);
+		console.log("Turning off")
+		await gpiop.write(11, false)
+		msleep(100)
+		console.log("Turning on")
+		await gpiop.write(11, true)
+		msleep(100);
+		console.log("Turning off")
+		await gpiop.write(11, false)
+		sleep(1)
+	}
 }
-       
-       
-       run();
+
+
+run();

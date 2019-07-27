@@ -21,49 +21,96 @@ async function run() {
 	await gpiop.setup(21, gpio.DIR_OUT)
 	await gpiop.setup(13, gpio.DIR_OUT)
 
-	await gpiop.write(40, false)
-	await gpiop.write(29, false)
-	await gpiop.write(33, false)
-	await gpiop.write(32, false)
+	async function stopEverything(){
+		await gpiop.write(40, false)
+		await gpiop.write(29, false)
+		await gpiop.write(33, false)
+		await gpiop.write(32, false)
 
-	//Motors 2
-	await gpiop.write(37, false)
-	await gpiop.write(19, false)
-	await gpiop.write(21, false)
-	await gpiop.write(13, false)
+		//Motors 2
+		await gpiop.write(37, false)
+		await gpiop.write(19, false)
+		await gpiop.write(21, false)
+		await gpiop.write(13, false)
+	}
 
-	await gpiop.write(19, true)
-	await gpiop.write(29, true)
+	await stopEverything();
 
 
 	while (true) {
 
-		console.log("Turning on")
-		await gpiop.write(7, true)
+		// console.log("Turning on")
+		// await gpiop.write(7, true)
 		
-		msleep(100);
-		console.log("Turning off")
-		await gpiop.write(7, false)
-		msleep(100)
-		console.log("Turning on")
-		await gpiop.write(7, true)
-		msleep(100);
-		console.log("Turning off")
-		await gpiop.write(7, false)
-		sleep(1)
+		// msleep(100);
+		// console.log("Turning off")
+		// await gpiop.write(7, false)
+		// msleep(100)
+		// console.log("Turning on")
+		// await gpiop.write(7, true)
+		// msleep(100);
+		// console.log("Turning off")
+		// await gpiop.write(7, false)
+		// sleep(1)
 
-		console.log("Turning on")
-		await gpiop.write(11, true)
-		msleep(100);
-		console.log("Turning off")
-		await gpiop.write(11, false)
-		msleep(100)
-		console.log("Turning on")
-		await gpiop.write(11, true)
-		msleep(100);
-		console.log("Turning off")
-		await gpiop.write(11, false)
-		sleep(1)
+		// console.log("Turning on")
+		// await gpiop.write(11, true)
+		// msleep(100);
+		// console.log("Turning off")
+		// await gpiop.write(11, false)
+		// msleep(100)
+		// console.log("Turning on")
+		// await gpiop.write(11, true)
+		// msleep(100);
+		// console.log("Turning off")
+		// await gpiop.write(11, false)
+		// sleep(1)
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(40, true)
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(29, true)
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(33, true)
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(32, true)
+
+		//Motors 2
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(37, true)
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(19, true)
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(21, true)
+
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+		await gpiop.write(13, true)
+		console.log("Starting A Motor");
+		sleep(2)
+		await stopEverything();
+
 	}
 }
 

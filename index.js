@@ -66,10 +66,10 @@ async function run() {
 		// await gpiop.write(11, false)
 		// sleep(1)
 
-		console.log("Starting A Motor");
-		// sleep(2)
-		//await stopEverything();
-		await gpiop.write(40, true)
+		// console.log("Starting A Motor");
+		// // sleep(2)
+		// //await stopEverything();
+		// await gpiop.write(40, true)
 
 		// console.log("Starting A Motor");
 		// sleep(2)

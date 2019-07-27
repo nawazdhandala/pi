@@ -21,12 +21,26 @@ async function run() {
 	await gpiop.setup(21, gpio.DIR_OUT)
 	await gpiop.setup(13, gpio.DIR_OUT)
 
+	await gpiop.write(40, false)
+	await gpiop.write(29, false)
+	await gpiop.write(33, false)
+	await gpiop.write(32, false)
+
+	//Motors 2
+	await gpiop.write(37, false)
+	await gpiop.write(19, false)
+	await gpiop.write(21, false)
+	await gpiop.write(13, false)
+
+	await gpiop.write(40, true)
+	await gpiop.write(37, true)
+
+
 	while (true) {
 
 		console.log("Turning on")
 		await gpiop.write(7, true)
-		await gpiop.write(40, true)
-		await gpiop.write(37, true)
+		
 		msleep(100);
 		console.log("Turning off")
 		await gpiop.write(7, false)

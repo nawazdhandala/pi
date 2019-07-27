@@ -68,48 +68,48 @@ async function run() {
 
 		console.log("Starting A Motor");
 		sleep(2)
-		await stopEverything();
+		//await stopEverything();
 		await gpiop.write(40, true)
 
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
-		await gpiop.write(29, true)
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
+		// await gpiop.write(29, true)
 
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
-		await gpiop.write(33, true)
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
+		// await gpiop.write(33, true)
 
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
-		await gpiop.write(32, true)
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
+		// await gpiop.write(32, true)
 
-		//Motors 2
+		// //Motors 2
 
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
-		await gpiop.write(37, true)
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
+		// await gpiop.write(37, true)
 
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
-		await gpiop.write(19, true)
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
+		// await gpiop.write(19, true)
 
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
-		await gpiop.write(21, true)
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
+		// await gpiop.write(21, true)
 
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
-		await gpiop.write(13, true)
-		console.log("Starting A Motor");
-		sleep(2)
-		await stopEverything();
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
+		// await gpiop.write(13, true)
+		// console.log("Starting A Motor");
+		// sleep(2)
+		// await stopEverything();
 
 	}
 }
@@ -125,7 +125,7 @@ async function exitHandler(options, exitCode) {
 }
 
 //do something when app is closing
-process.on('exit', exitHandler.bind(null,{cleanup:true}));
+process.on('exit', exitHandler.bind(null, {cleanup:true}));
 
 //catches ctrl+c event
 process.on('SIGINT', exitHandler.bind(null, {exit:true}));

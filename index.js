@@ -67,7 +67,7 @@ async function run() {
 		// sleep(1)
 
 		console.log("Starting A Motor");
-		sleep(2)
+		// sleep(2)
 		//await stopEverything();
 		await gpiop.write(40, true)
 
@@ -114,28 +114,28 @@ async function run() {
 	}
 }
 
-process.stdin.resume();  //so the program will not close instantly
+// process.stdin.resume();  //so the program will not close instantly
 
-async function exitHandler(options, exitCode) {
-	console.log("Stopping everything. ")
-	await stopEverything();
-    if (options.cleanup) console.log('clean');
-    if (exitCode || exitCode === 0) console.log(exitCode);
-    if (options.exit) process.exit();
-}
+// async function exitHandler(options, exitCode) {
+// 	console.log("Stopping everything. ")
+// 	await stopEverything();
+//     if (options.cleanup) console.log('clean');
+//     if (exitCode || exitCode === 0) console.log(exitCode);
+//     if (options.exit) process.exit();
+// }
 
-//do something when app is closing
-process.on('exit', exitHandler.bind(null, {cleanup:true}));
+// //do something when app is closing
+// process.on('exit', exitHandler.bind(null, {cleanup:true}));
 
-//catches ctrl+c event
-process.on('SIGINT', exitHandler.bind(null, {exit:true}));
+// //catches ctrl+c event
+// process.on('SIGINT', exitHandler.bind(null, {exit:true}));
 
-// catches "kill pid" (for example: nodemon restart)
-process.on('SIGUSR1', exitHandler.bind(null, {exit:true}));
-process.on('SIGUSR2', exitHandler.bind(null, {exit:true}));
+// // catches "kill pid" (for example: nodemon restart)
+// process.on('SIGUSR1', exitHandler.bind(null, {exit:true}));
+// process.on('SIGUSR2', exitHandler.bind(null, {exit:true}));
 
-//catches uncaught exceptions
-process.on('uncaughtException', exitHandler.bind(null, {exit:true}));
+// //catches uncaught exceptions
+// process.on('uncaughtException', exitHandler.bind(null, {exit:true}));
 
 
 run();

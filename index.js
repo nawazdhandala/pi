@@ -32,8 +32,8 @@ async function run() {
 	await gpiop.write(21, false)
 	await gpiop.write(13, false)
 
-	// await gpiop.write(40, true)
-	// await gpiop.write(37, true)
+	await gpiop.write(40, true)
+	await gpiop.write(37, true)
 
 
 	while (true) {

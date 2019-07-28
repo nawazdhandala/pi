@@ -140,7 +140,7 @@ async function run() {
 		//motor 4 clockwise. 
 		await gpiop.setup(40, gpio.DIR_OUT)
 
-		console.log("All motoros on complete.")
+		console.log("All motoros on sequence complete.")
 	}
 
 	async function ledOn() {
@@ -182,7 +182,7 @@ async function run() {
 	//stop and clear all ports. 
 	await stop();
 
-	ledOn();
+	//ledOn();
 
 	await motorOn();
 	await sleep(30000)

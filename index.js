@@ -129,17 +129,16 @@ async function run() {
 	async function motorOn() {
 		console.log("All Motors On");
 		//motor 1 clockwise. 
-		await gpiop.setup(21, gpio.DIR_OUT)
+		await gpiop.write(21, true)
 
 		//motor 2 clockwise. 
-		await gpiop.setup(13, gpio.DIR_OUT)
+		await gpiop.write(13, true)
 
 		//motor 3 clockwise
-		await gpiop.setup(32, gpio.DIR_OUT)
+		await gpiop.write(32, true)
 
 		//motor 4 clockwise. 
-		await gpiop.setup(40, gpio.DIR_OUT)
-
+		await gpiop.write(40, true)
 		console.log("All motoros on sequence complete.")
 	}
 

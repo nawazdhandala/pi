@@ -41,7 +41,8 @@ async function run() {
 
 		// console.log("Turning on")
 		// await gpiop.write(7, true)
-		
+		console.log("Running on Port 19")
+		//await gpiop.write(19, true)
 		// msleep(100);
 		// console.log("Turning off")
 		// await gpiop.write(7, false)

@@ -4,7 +4,7 @@ var gpiop = gpio.promise;
 
 async function run() {
 
-	function setup() {
+	async function setup() {
 		//LED
 		await gpiop.setup(7, gpio.DIR_OUT)
 		await gpiop.setup(11, gpio.DIR_OUT)

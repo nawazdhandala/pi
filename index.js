@@ -127,7 +127,20 @@ async function run() {
 	}
 
 	async function motorOn() {
+		console.log("All Motors On");
+		//motor 1 clockwise. 
+		await gpiop.setup(21, gpio.DIR_OUT)
 
+		//motor 2 clockwise. 
+		await gpiop.setup(13, gpio.DIR_OUT)
+
+		//motor 3 clockwise
+		await gpiop.setup(32, gpio.DIR_OUT)
+
+		//motor 4 clockwise. 
+		await gpiop.setup(40, gpio.DIR_OUT)
+
+		console.log("All motoros on complete.")
 	}
 
 	async function ledOn() {
@@ -170,6 +183,11 @@ async function run() {
 	await stop();
 
 	ledOn();
+
+	await motorOn();
+	await sleep(30000)
+	await stop();
+
 }
 
 try {

@@ -5,6 +5,7 @@ var gpiop = gpio.promise;
 async function run() {
 
 	async function setup() {
+		console.log("Setting up Ports")
 		//LED
 		await gpiop.setup(7, gpio.DIR_OUT)
 		await gpiop.setup(11, gpio.DIR_OUT)
@@ -20,6 +21,8 @@ async function run() {
 		await gpiop.setup(19, gpio.DIR_OUT)
 		await gpiop.setup(21, gpio.DIR_OUT)
 		await gpiop.setup(13, gpio.DIR_OUT)
+
+		console.log("Setup Complete.")
 	}
 
 
@@ -41,7 +44,7 @@ async function run() {
 		await gpiop.write(11, false)
 	}
 
-	
+
 
 
 	async function test() {
@@ -169,4 +172,8 @@ async function run() {
 	ledOn();
 }
 
-run();
+try {
+	run();
+} catch (e) {
+	console.error(e);
+}
